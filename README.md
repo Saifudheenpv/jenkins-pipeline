@@ -1,196 +1,105 @@
-Jenkins CI/CD Pipeline Project
+# Jenkins CI/CD Pipeline Project
 
 This project demonstrates a CI/CD pipeline using Jenkins to automate building, linting, and testing a Python Flask web app. The pipeline ensures code quality and functionality, showcasing real-world DevOps automation skills for software delivery.
 
-Features
+---
 
+## Features
 
+- **Simple Flask app** with one endpoint (`/`).
+- **Unit tests** with `pytest`.
+- **Linting** with `Flake8` for code quality.
+- **Jenkins pipeline** (`Jenkinsfile`) for CI/CD automation.
+- **Professional GitHub documentation**.
 
+---
 
+## Prerequisites
 
-Simple Flask app with one endpoint (/).
+- Jenkins
+- Java JDK (17 recommended)
+- Python 3.8+
+- Git
+- GitHub account
 
+---
 
+## Setup Instructions
 
-Unit tests with pytest.
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/jenkins-pipeline.git
+    cd jenkins-pipeline
+    ```
 
+2. **Install dependencies locally:**
+    ```bash
+    python -m venv venv
+    venv\Scripts\activate
+    pip install -r requirements.txt
+    ```
 
+3. **Run the app:**
+    ```bash
+    python app.py
+    ```
+    Visit [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to see **"Hello, Jenkins CI/CD!"**.
 
-Linting with Flake8 for code quality.
+4. **Run tests and linting:**
+    ```bash
+    flake8 app.py test_app.py
+    pytest
+    ```
 
+---
 
+## Jenkins Setup
 
-Jenkins pipeline (Jenkinsfile) for CI/CD automation.
+1. **Install Jenkins and Java** ([jenkins.io](https://jenkins.io)).
+2. **Configure Python and Git** in Jenkins PATH.
+3. **Create a pipeline job:**
+    - Name: `flask-pipeline`
+    - Pipeline: SCM, Git, URL `https://github.com/your-username/jenkins-pipeline.git`, Branch `main`, Script Path `Jenkinsfile`
+4. **Run the pipeline in Jenkins.**
 
+---
 
+## Jenkins Pipeline
 
-Professional GitHub documentation.
+**Jenkinsfile:** Defines a pipeline with:
+- **Build:** Creates virtual environment, installs dependencies.
+- **Lint:** Runs Flake8.
+- **Test:** Runs pytest.
+- Uses Windows batch commands (`bat`).
+- Deactivates virtual environment in post step.
 
-Prerequisites
-
-
-
-
-
-Jenkins
-
-
-
-Java JDK (17 recommended)
-
-
-
-Python 3.8+
-
-
-
-Git
-
-
-
-GitHub account
-
-Setup Instructions
-
-
-
-
-
-Clone the repository:
-
-git clone https://github.com/your-username/jenkins-pipeline.git
-cd jenkins-pipeline
-
-
-
-Install dependencies locally:
-
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-
-
-
-Run the app:
-
-python app.py
-
-Visit http://127.0.0.1:5000/ to see "Hello, Jenkins CI/CD!".
-
-
-
-Run tests and linting:
-
-flake8 app.py test_app.py
-pytest
-
-
-
-Set up Jenkins:
-
-
-
-
-
-Install Jenkins and Java (jenkins.io).
-
-
-
-Configure Python and Git in Jenkins PATH.
-
-
-
-Create a pipeline job:
-
-
-
-
-
-Name: flask-pipeline.
-
-
-
-Pipeline: SCM, Git, URL https://github.com/your-username/jenkins-pipeline.git, Branch main, Script Path Jenkinsfile.
-
-
-
-Run the pipeline in Jenkins.
-
-Jenkins Pipeline
-
+---
 
 ## Screenshot
+
 ![Jenkins Pipeline](images/screenshot.png)
 
+---
 
-Jenkinsfile: Defines a pipeline with:
+## Challenges Faced
 
+- Configured Jenkins on Windows with Java and PATH setup.
+- Learned Jenkins pipeline syntax and Jenkinsfile creation.
+- Debugged Windows-specific batch commands for virtual environment.
+- Ensured Flake8 and pytest compatibility in Jenkins.
 
+---
 
+## Future Improvements
 
+- Add a deployment stage (e.g., to AWS or Docker Hub).
+- Integrate test coverage reporting (e.g., `coverage.py`).
+- Add parallel pipeline stages for efficiency.
 
-Build: Creates virtual environment, installs dependencies.
+---
 
+## Author
 
+**Your Name** ([GitHub](https://github.com/your-username))
 
-Lint: Runs Flake8.
-
-
-
-Test: Runs pytest.
-
-
-
-Uses Windows batch commands (bat).
-
-
-
-Deactivates virtual environment in post step.
-
-Challenges Faced
-
-
-
-
-
-Configured Jenkins on Windows with Java and PATH setup.
-
-
-
-Learned Jenkins pipeline syntax and Jenkinsfile creation.
-
-
-
-Debugged Windows-specific batch commands for virtual environment.
-
-
-
-Ensured Flake8 and pytest compatibility in Jenkins.
-
-Future Improvements
-
-
-
-
-
-Add a deployment stage (e.g., to AWS or Docker Hub).
-
-
-
-Integrate test coverage reporting (e.g., coverage.py).
-
-
-
-Add parallel pipeline stages for efficiency.
-
-Author
-
-
-
-
-
-Your Name (GitHub)
-
-
-
-Connect on LinkedIn
+Connect on [LinkedIn](https://www.linkedin.com/)
