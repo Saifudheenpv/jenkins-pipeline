@@ -119,7 +119,8 @@ Run the pipeline in Jenkins.
 Jenkins Pipeline
 
 
-
+## Screenshot
+![Jenkins Pipeline](images/screenshot.png)
 
 
 Jenkinsfile: Defines a pipeline with:
